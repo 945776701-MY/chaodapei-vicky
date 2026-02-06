@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>我的待办清单</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="page">
+    <div class="app">
+      <div class="poster">
+        <div class="poster-content">
+          <div class="poster-title">春节学习任务</div>
+          <div class="poster-subtitle">新年新计划，轻松坚持每一天</div>
+        </div>
+      </div>
+      <header class="header">
+        <h1 class="title">🧸 我的待办清单</h1>
+      </header>
+      <div class="input-row">
+        <input id="todo-input" type="text" placeholder="今天要做什么？" maxlength="200" aria-label="任务内容">
+        <input id="due-input" type="date" aria-label="要求完成时间">
+        <select id="priority-select" aria-label="优先级">
+          <option value="high">高</option>
+          <option value="medium" selected>中</option>
+          <option value="low">低</option>
+        </select>
+        <button id="add-btn" type="button">➕ 添加任务</button>
+      </div>
+      <div class="counts counts-inline" aria-live="polite">
+        <span id="count-active">未完成 0</span>
+        <span class="sep">•</span>
+        <span id="count-completed">已完成 0</span>
+      </div>
+      <div class="filters" role="tablist" aria-label="优先级筛选">
+        <button class="filter-btn active" data-filter="all" type="button">全部</button>
+        <button class="filter-btn" data-filter="high" type="button">高</button>
+        <button class="filter-btn" data-filter="medium" type="button">中</button>
+        <button class="filter-btn" data-filter="low" type="button">低</button>
+      </div>
+      <ul id="todo-list" class="list" aria-label="任务列表"></ul>
+      <div id="empty-state" class="empty">还没有任务，先添加一个吧～</div>
+      <div class="actions">
+        <button id="clear-all" type="button" class="clear-btn clear-all">全部清空</button>
+        <button id="clear-completed" type="button" class="clear-btn">清空已完成</button>
+      </div>
+      <footer class="footer">刷新后仍会保留</footer>
+    </div>
+  </div>
+  <script src="./app.js"></script>
+</body>
+</html>
